@@ -21,4 +21,7 @@ def handle_hi():
 
 if __name__ == "__main__":
     app.config['SECRET_KEY'] = os.environ.get('FLASK_SECRET_KEY', '*')
-    app.run(debug=True, port=int(os.environ.get('PORT')) if 'PORT' in os.environ else None)
+    app.run(
+        debug=True, 
+        host='0.0.0.0',
+        port=int(os.environ.get('PORT')) if 'PORT' in os.environ else None)
