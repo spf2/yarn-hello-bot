@@ -10,13 +10,24 @@ app = Flask(__name__)
 
 @app.route("/", methods=['POST'])
 def handle_hi():
-    thread = request.json['mention']['thread']
-    names = [p['user']['name'] for p in thread['participants']]
+    response = None
+    if 'mention' in request.json:
+        thread = request.json['mention']['thread']
+        names = [p['user']['name'] for p in thread['participants']]
+        response = u"Hello {}. Cool thread name: \"{}\"".format(
+            plural.join(names), thread['topic'])
+    elif 'delivery' in request.json and 'event' in request.json['delivery']:
+        thread = request.json['delivery']['thread']
+        event = request.json['delivery']['event']
+        if event['type'] == 'ADDED':
+            names = [u['name'] for u in event['users'] if u['ident'].startswith('user:')]
+            if names:
+                response = u"Let me welcome you to this thread, {}".format(plural.join(names))
 
-    response = u"Hello {}. Cool thread name: \"{}\"".format(
-        plural.join(names), thread['topic'])
+    if not response:
+	return ""
 
-    return jsonify(text=response)
+    return jsonify(message={'text': response})
 
 
 if __name__ == "__main__":
