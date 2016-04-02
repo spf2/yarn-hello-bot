@@ -27,7 +27,7 @@ def handle_hi():
     if not response:
 	return ""
 
-    return jsonify(message={'text': response})
+    return jsonify(message={'text': response}, all_recipients=True)
 
 
 if __name__ == "__main__":
