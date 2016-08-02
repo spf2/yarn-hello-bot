@@ -4,5 +4,5 @@ function uppercase(m) {
 }
 
 function getMessageActions(m) { 
-  return [['upper case', uppercase]];
+  return [{title: 'upper case', name: 'upper', fn: uppercase, }];
 }
