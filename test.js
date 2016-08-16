@@ -1,7 +1,7 @@
 
-function uppercase(ctx, msg) {
-  msg.text = msg.text.toUpperCase();
-  ctx.forward = false;
+function uppercase(ctx) {
+  ctx.message.text = ctx.message.text.toUpperCase();
+  ctx.forward();
 }
 
 function getMessageActions(m) { 
