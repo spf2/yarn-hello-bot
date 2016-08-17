@@ -1,7 +1,8 @@
 
-function uppercase(ctx) {
-  ctx.message.text = ctx.message.text.toUpperCase();
-  ctx.forward();
+function uppercase(ctx, bubble) {
+  bubble.message.text = bubble.message.text.toUpperCase();
+  console.log(bubble.backgroundColorRGB);
+  bubble.backgroundColorRGB = "FFFFFF";
 }
 
 function getMessageActions(m) { 
