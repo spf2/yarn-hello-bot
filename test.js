@@ -6,7 +6,7 @@ function getMessageActions(m) {
       bubble.backgroundColorRGB = "CCCCFF";
       ctx.send();
     }, 
-    onReceive: function(ctx, bubble, value) {
+    onReceive: function(bubble, value) {
       bubble.message.text = bubble.message.text.toUpperCase();
     },
 }
