@@ -4,7 +4,7 @@ function getMessageActions(m) {
     id: 'upper',
     onSelect: function(ctx, bubble) {
       bubble.backgroundColorRGB = "CCCCFF";
-      ctx.forward();
+      ctx.send();
     }, 
     onReceive: function(ctx, bubble, value) {
       bubble.message.text = bubble.message.text.toUpperCase();
