@@ -1,7 +1,7 @@
 function getMessageActions(m) { 
   return [{
     title: 'upper case', 
-    id: 'upper',
+    name: 'upper',
     onSelect: function(bubble, peers) {
       bubble.backgroundColorRGB = "CCCCFF";
       peers.send();
