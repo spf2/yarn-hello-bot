@@ -9,4 +9,5 @@ function getMessageActions(m) {
     onReceive: function(bubble, value) {
       bubble.message.text = bubble.message.text.toUpperCase();
     },
+  }]
 }
