@@ -2,7 +2,7 @@ function getMessageActions(m) {
   return [{
     title: 'upper case', 
     id: 'upper',
-    onSelect: function(ctx, bubble) {
+    onSelect: function(bubble, peers) {
       bubble.backgroundColorRGB = "CCCCFF";
       ctx.send();
     }, 
