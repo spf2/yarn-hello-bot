@@ -7,7 +7,7 @@ function getMessageActions(m) {
       peers.send();
     }, 
     onReceive: function(bubble, value) {
-      bubble.message.text = bubble.message.text.toUpperCase();
+      bubble.text = bubble.message.text.toUpperCase();
     },
   }]
 }
