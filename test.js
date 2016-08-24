@@ -1,4 +1,4 @@
-function getMessageActions(message) { 
+function getMessageActions(bubble) { 
   return [
     ['Like', function(bubble, peers) { peers.send("like"); }],
   ]
