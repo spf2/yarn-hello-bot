@@ -24,4 +24,12 @@ var actionHandlers = {
       bubble.badge = "1";
     }
   },
+  'unlike': function(bubble, value) {
+    var val = parseInt(bubble.badge);
+    if (val <= 1) {
+      bubble.badge = "";
+    } else {
+      bubble.badge = String(val - 1);
+    }
+  },
 }
