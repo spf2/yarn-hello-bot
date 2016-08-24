@@ -9,7 +9,7 @@ function getMessageActions(bubble) {
   } else {
     return [
       ['Like', function(bubble, peers) { 
-        bubble.data.liked = true;
+        bubble.data.liked = "yes";
         peers.send("like", ""); 
       }],
     ]
