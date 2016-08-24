@@ -10,8 +10,9 @@ function getMessageActions(message) {
       if (bubble.badge) {
         bubble.badge = String(parseInt(bubble.badge) + 1);
         console.log("new: " + bubble.badge);
+      } else {
+        bubble.badge = "1";
       }
-      bubble.badge = "1";
     },
   }]
 }
