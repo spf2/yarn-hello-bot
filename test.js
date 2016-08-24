@@ -1,7 +1,19 @@
-function getMessageActions(bubble) { 
-  return [
-    ['Like', function(bubble, peers) { peers.send("like"); }],
-  ]
+function getMessageActions(bubble) {
+  if (bubble.data.liked) {
+    return [
+      ['Undo Like', function(bubble, peers) { 
+        delete bubble.data.liked;
+        peers.send("unlike"); 
+      }],
+    ]
+  } else {
+    return [
+      ['Like', function(bubble, peers) { 
+        bubble.data.liked = true;
+        peers.send("like"); 
+      }],
+    ]
+  }
 }
 
 var actionHandlers = {
