@@ -3,14 +3,14 @@ function getMessageActions(bubble) {
     return [
       ['Undo Like', function(bubble, peers) { 
         delete bubble.data.liked;
-        peers.send("unlike"); 
+        peers.send("unlike", null); 
       }],
     ]
   } else {
     return [
       ['Like', function(bubble, peers) { 
         bubble.data.liked = true;
-        peers.send("like"); 
+        peers.send("like", null); 
       }],
     ]
   }
