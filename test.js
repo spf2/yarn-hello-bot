@@ -8,6 +8,7 @@ function getMessageActions(m) {
     }, 
     onReceive: function(bubble, value) {
       bubble.body = bubble.message.text.toUpperCase();
+      bubble.badge = "😳"
     },
   }]
 }
