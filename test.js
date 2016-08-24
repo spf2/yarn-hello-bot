@@ -25,11 +25,10 @@ var actionHandlers = {
     }
   },
   'unlike': function(bubble, value) {
-    var val = parseInt(bubble.badge);
-    if (val <= 1) {
+    if (!bubble.badge || parseInt(bubble.badge) <= 1) {
       bubble.badge = "";
     } else {
-      bubble.badge = String(val - 1);
+      bubble.badge = String(parseInt(bubble.badge) - 1);
     }
   },
 }
