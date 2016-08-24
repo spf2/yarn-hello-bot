@@ -1,14 +1,15 @@
-function getMessageActions(m) { 
+function getMessageActions(message) { 
   return [{
-    title: 'upper case', 
-    name: 'upper',
+    title: 'Like', 
+    name: 'like',
     onSelect: function(bubble, peers) {
-      bubble.backgroundColorRGB = "CCCCFF";
       peers.send();
     }, 
     onReceive: function(bubble, value) {
-      bubble.body = bubble.message.text.toUpperCase();
-      bubble.badge = "😳"
+      if (bubble.badge) {
+        bubble.badge = String(parseInt(bubble.badge) + 1);
+      }
+      bubble.badge = "1";
     },
   }]
 }
