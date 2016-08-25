@@ -5,7 +5,7 @@ function getMessageActions(bubble) {
     label = "Undo Like";
     key = "unlike";
   }
-  return [label, function(bubble, peers) { bubble.toggle("liked"); peers.send(key) }]
+  return [[label, function(bubble, peers) { bubble.toggle("liked"); peers.send(key) }]]
 }
 
 var actionHandlers = {
