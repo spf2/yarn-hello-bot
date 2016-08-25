@@ -8,11 +8,8 @@ function getMessageActions(bubble) {
 
 var actionHandlers = {
   'like': function(bubble, value) {
-    console.log(value);
-    var incr = parseInt(value);
-    console.log(incr);
     if (bubble.badge) {
-      bubble.badge = String(parseInt(bubble.badge) + incr);
+      bubble.badge = String(parseInt(bubble.badge) + parseInt(value));
     } else {
       bubble.badge = value;
     }
