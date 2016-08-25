@@ -13,8 +13,7 @@ function getMessageActions(bubble) {
       function(bubble, peers) {
         var url = yandexUrl + "?key=" + yandexKey + "&lang=en-es&text=" + encodeURI(bubble.body);
         fetch.fetch(url).then(function(response) {
-          console.log(response);
-          var json = JSON.parse(response);
+          var json = JSON.parse(response.body);
           bubble.body = json.text[0];
         });
       }
