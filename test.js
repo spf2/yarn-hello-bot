@@ -1,8 +1,8 @@
 function getMessageActions(bubble) {
   return [[
     "Like", 
-    function(bubble, peers) { peers.send("like", 1) },
-    function(bubble, peers) { peers.send("like", -1) },
+    function(bubble, peers) { peers.send("like", "1") },
+    function(bubble, peers) { peers.send("like", "-1") },
   ]]
 }
 
