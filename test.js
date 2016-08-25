@@ -14,7 +14,7 @@ var actionHandlers = {
     if (bubble.badge) {
       bubble.badge = String(parseInt(bubble.badge) + incr);
     } else {
-      bubble.badge = incr;
+      bubble.badge = value;
     }
   },
 }
