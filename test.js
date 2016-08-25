@@ -10,6 +10,7 @@ function getMessageActions(bubble) {
     return [
       ['Like', function(bubble, peers) { 
         bubble.data.liked = "yes";
+        console.log(bubble.data.liked);
         peers.send("like", ""); 
       }],
     ]
