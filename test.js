@@ -1,20 +1,11 @@
 function getMessageActions(bubble) {
-  if (bubble.data.liked) {
-    return [
-      ['Undo Like', function(bubble, peers) { 
-        delete bubble.data.liked;
-        peers.send("unlike", ""); 
-      }],
-    ]
-  } else {
-    return [
-      ['Like', function(bubble, peers) { 
-        bubble.data.liked = "yes";
-        console.log(bubble.data.liked);
-        peers.send("like", ""); 
-      }],
-    ]
+  var label = "Like";
+  var key = "like";
+  if (bubble.isToggled("liked")) {
+    label = "Undo Like";
+    key = "unlike";
   }
+  return [label, function(bubble, peers) { bubble.toggle("liked"); peers.send(key) }]
 }
 
 var actionHandlers = {
