@@ -4,7 +4,10 @@ var yandexKey = "trnsl.1.1.20160825T224654Z.60d8da3a9f67c52b.ba2dfcc5fcd88c42ed6
 function initialize(stream) {
   console.log(stream.thread.topic);
   stream.backgroundColorRGB = "#FFFFCC";
-  util.setTimeout(function() { stream.backgroundRGB = "#FFCCFF" }, 1000);
+  util.setTimeout(function() { 
+    stream.backgroundRGB = "#FFCCFF";
+    console.log(stream.backgroundRGB);
+  }, 1000);
 }
 
 function getMessageActions(bubble) {
