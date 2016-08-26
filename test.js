@@ -6,7 +6,7 @@ function initialize(stream) {
   stream.backgroundColorRGB = "#FFFFCC";
   util.setTimeout(function() { 
     stream.backgroundColorRGB = "#FFCCFF";
-    console.log(stream.backgroundRGB);
+    console.log(stream.backgroundColorRGB);
   }, 1000);
 }
 
