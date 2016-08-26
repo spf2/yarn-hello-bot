@@ -4,7 +4,7 @@ var yandexKey = "trnsl.1.1.20160825T224654Z.60d8da3a9f67c52b.ba2dfcc5fcd88c42ed6
 function initialize(stream) {
   console.log(stream.thread.topic);
   stream.backgroundColorRGB = "#FFFFCC";
-  setTimeout(function() { stream.backgroundRGB = "#FFCCFF" }, 1000);
+  util.setTimeout(function() { stream.backgroundRGB = "#FFCCFF" }, 1000);
 }
 
 function getMessageActions(bubble) {
@@ -18,7 +18,7 @@ function getMessageActions(bubble) {
       "Translate",
       function(bubble, peers) {
         var url = yandexUrl + "?key=" + yandexKey + "&lang=en-es&text=" + encodeURI(bubble.body);
-        fetch.fetch(url).then(function(response) {
+        util.fetch(url).then(function(response) {
           var json = JSON.parse(response.body);
           bubble.body = json.text[0];
         });
