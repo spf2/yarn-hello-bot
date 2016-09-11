@@ -32,6 +32,9 @@ function getMessageActions(bubble) {
 
 var actionHandlers = {
   'like': function(bubble, value) {
+    if (!value) {
+      return;
+    }
     console.log(bubble.badge.count + " / " + parseInt(value) + " / " + value);
     bubble.badge.count += parseInt(value);
   },
