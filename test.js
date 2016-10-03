@@ -5,7 +5,7 @@ function initialize(stream) {
   console.log(stream.thread.topic);
   stream.backgroundColorRGB = "#FFFFCC";
   util.setTimeout(function() { 
-    stream.backgroundColorRGB = "#FFCCFF";
+    stream.backgroundColorRGB = "#FFFFFF";
     console.log(stream.backgroundColorRGB);
   }, 1000);
 }
